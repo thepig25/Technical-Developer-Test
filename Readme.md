@@ -1,7 +1,23 @@
+Vodafone Tech Test
+=================
+
 Install
 bower install
 npm install
 open localhost:3000
+
+## Installation and running these experiments
+
+
+From your terminal/git bash console:
+
+```sh
+
+npm Install
+bower install
+npm install
+open localhost:3000
+```
 
 Using the attached Json Data Model. 
 Build the attached web page listing the richest celebrites of 2014.
