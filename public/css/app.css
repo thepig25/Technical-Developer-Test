@@ -1,0 +1,15 @@
+.pricing-table .title {
+	background-color: #074e68;
+}
+.pricing-table .price {
+	font-size: 1em;
+}
+
+.heading {
+	text-align:center;
+}
+
+[ng-cloak]
+{
+  display: none !important;
+}

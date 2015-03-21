@@ -1,0 +1,22 @@
+{
+  "name": "vodafone-technical-test",
+  "version": "0.0.1",
+  "homepage": "https://github.com/thepig25",
+  "authors": [
+    "Ciaran Hale <ciaranhale@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/bower_components"
+  ],
+  "dependencies": {
+    "foundation": "5.x",
+    "react": "0.8.x",
+    "lodash": "2.4.x",
+    "angular": "~1.4.0",
+    "angular-filter": "~0.5.4"
+  }
+}

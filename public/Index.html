@@ -1,0 +1,113 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Technical Test</title>
+	<link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
+	<link rel="stylesheet" href="css/app.css" />
+	<script src="bower_components/foundation/js/vendor/modernizr.js"></script>
+</head>
+
+<body>
+	<div ng-cloak ng-app="celebrityApp">
+		<div ng-controller="CelebrityCtrl">
+			<div class="row">
+				<div class="large-2 columns">
+					&nbsp;
+				</div>
+				<div class="large-8 columns heading">
+					<h1>{{user.pageTitleH1}}</h1>
+					<h2>{{user.pageTitleH2}}</h2>
+					<p>{{user.description}}</p>
+					<p>Reference: <a href="{{user.referenceLink}}">{{user.referenceLink}}</a></p>
+				</div>
+				<div class="large-2 columns">
+					&nbsp;
+				</div>
+			</div>
+			<!-- Angular's container -->
+			<div class="row">
+				<div class="large-12 columns angularWrapper">
+					<div id="container" class="panel">
+						<div class="row">
+							<div class="large-2 columns">
+								&nbsp;
+							</div>
+							<div class="large-4 columns">
+								Birthplace:
+								<select ng-model="countryFilter" ng-change="filter()">
+									<option value="">
+										Show All
+									</option>
+									<option ng-repeat="eachCountry in loadUser = (user.celebrityList | unique: 'country' | orderBy : 'country')" value="{{eachCountry.country}}">
+										{{eachCountry.country}}
+									</option>
+								</select>
+							</div>
+							<div class="large-4 columns">
+								Currency Converter:
+								<select ng-options="currency.name for currency in currencies" ng-model="fromCurrency" class="span3"></select>
+							</div>
+							<div class="large-2 columns">
+								&nbsp;
+							</div>
+						</div>
+						<div class="row">
+							<div class="large-2 columns">
+								&nbsp;
+							</div>
+							<div class="large-4 columns">
+								Search: <input type="text" ng-model="search" ng-change="filter()" placeholder="Search">
+							</div>
+							<div class="large-4 columns">
+								Order By:
+								<select ng-model="orderProp">
+									<option value="rank">Rank</option>
+									<option value="name">Name</option>
+									<option value="age">Age</option>
+								</select>
+							</div>
+							<div class="large-2 columns">
+								&nbsp;
+							</div>
+						</div>
+						<div class="row">
+							<div class="large-2 columns">
+								&nbsp;
+							</div>
+							<div class="large-8 columns">
+								<div class="panel">
+									<ul class="pricing-table">
+										<div ng-cloak ng-repeat="eachUser in loadUser = (user.celebrityList | filter:search | filter:countryFilter | orderBy:orderProp)" class="celebrityUser">
+											<li class="title">No: {{eachUser.rank}}</li>
+											<li class="price">Name: {{eachUser.name}}</li>
+											<li class="price">Net Worth: {{calcCurrency(eachUser.netWorth) | currency:fromCurrency.currencyCode:0}} </li>
+											<li class="price">Age: {{eachUser.age}}</li>
+											<li class="price">Counrty of Birth: {{eachUser.country}}</li>
+										</div>
+										<li class="title" ng-show="(user.celebrityList | filter:search).length === 0">No Results Found</li>
+									</ul>
+								</div>
+							</div>
+							<div class="large-2 columns">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- JavaScript libraries -->
+	<script src="bower_components/foundation/js/vendor/jquery.js"></script>
+	<script src="bower_components/foundation/js/foundation.min.js"></script>
+	<script src="/bower_components/lodash/dist/lodash.min.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-filter/dist/angular-filter.min.js"></script>
+	<!-- Application components. A build step would be nice here. -->
+	<script src="javascripts/Celebrity.js"></script>
+</body>
+
+</html>
