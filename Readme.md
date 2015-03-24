@@ -13,9 +13,9 @@ From your terminal/git bash console:
 
 ```sh
 
-npm Install
-bower install
 npm install
+bower install
+npm start
 open localhost:3000
 ```
 
@@ -51,7 +51,3 @@ Bonus Tasks:
 2. Make it Production Ready
 3. Unit Test
 3. Automation Test
-
-
-
-
