@@ -6,9 +6,6 @@ bower install
 npm install
 open localhost:3000
 
-to run on proxy in .bowerrc file add:
-"proxy":"http://localhost:3128",
-"https-proxy":"http://localhost:3128"
 
 ## Installation and running these experiments
 
