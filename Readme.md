@@ -1,12 +1,6 @@
 Vodafone Tech Test
 =================
 
-Install
-bower install
-npm install
-open localhost:3000
-
-
 ## Installation and running these experiments
 
 
@@ -18,6 +12,12 @@ npm install
 bower install
 npm start
 open localhost:3000
+```
+```
+to run on proxy 
+in .bowerrc file add:
+"proxy":"http://localhost:3128",
+"https-proxy":"http://localhost:3128"
 ```
 
 Using the attached Json Data Model. 
